@@ -9,8 +9,6 @@ const CourseDetails = () => {
 
     const { title, price, description, rating, image } = data
 
-
-
     return (
         <div>
             <div class=" mx-60">

@@ -2,13 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import SingleCourse from './SingleCourse';
 import './Courses.css'
-import CoursesName from './CoursesName';
-import LeftSideNav from './LeftSideNav';
-import CourseDetails from './CourseDetails';
 
 const Courses = () => {
   const data = useLoaderData()
-  // console.log(data);
 
 
   const [courses, setCourses] = useState([])

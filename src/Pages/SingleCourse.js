@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 const SingleCourse = ({ singleCouse }) => {
 
-
-
-    
-    // console.log(singleCouse)
     const { title, price, description, image } = singleCouse
     return (
         <div>

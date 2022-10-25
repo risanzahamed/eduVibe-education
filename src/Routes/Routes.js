@@ -6,14 +6,14 @@ import Login from "../Pages/Login";
 import SingUp from "../Pages/SingUp";
 import Roots from "./Roots";
 import Faq from "../Pages/Faq";
-import CoursesName from "../Pages/CoursesName";
 import CourseDetails from "../Pages/CourseDetails";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
       path: '/',
       element: <Roots></Roots>,
-    //   errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: '/',
@@ -37,12 +37,6 @@ export const router = createBrowserRouter([
           element: <Courses/>,
           loader: () => fetch(`https://education-api-server.vercel.app/courses/`)
         },
-        {
-          path:'/courses-details',
-          element: <CourseDetails/>,
-          loader: () => fetch(`https://education-api-server.vercel.app/courses/`)
-        },
-
         {
           path:'/courses/:id',
           element: <Courses/>,

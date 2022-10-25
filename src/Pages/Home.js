@@ -11,12 +11,10 @@ const Home = () => {
             {/* // * Hero section // */}
 
 
-            <div className="bg-yellow-50  relative px-4 pt-20 pb-20 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-xl md:max-w-full">
-                <div className="max-w-xl mx-auto pb-20 lg:max-w-screen-xl">
+            <div className="bg-yellow-50  relative lg:h-screen px-4 pt-20 pb-20 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-xl md:max-w-full">
+                <div className="max-w-xl mx-auto pb-20 h-100 lg:max-w-screen-xl">
                     <div className="mb-16 lg:max-w-lg lg:mb-0">
-                        <div className="max-w-xl mb-6">
-                            <div>
-                            </div>
+                        <div className="mt-44 pt-40 justify-center align-middle max-w-xl mb-6">
                             <h1 className='text-5xl font-bold mb-4'>Education Is About Academic Excellence</h1>
                             <p className="text-base text-gray-700 md:text-lg">
                                 It is long established that a reader will be distracted by the
@@ -42,7 +40,7 @@ const Home = () => {
                 </div>
                 <div className="flex justify-center mt-40 z-0  lg:w-2/3 xl:w-1/2 lg:absolute lg:justify-start lg:bottom-0 lg:right-0 lg:items-end">
                     <img
-                        className='lg:w-2/3 lg:h-auto'
+                        className='lg:w-2/3 lg:h-2/4'
                         src="https://eduvibe.react.devsvibe.com/images/banner/banner-02/banner-01.png"
                         alt=""
                     />
