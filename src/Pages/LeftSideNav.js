@@ -18,7 +18,7 @@ const LeftSideNav = ({singleCouse}) => {
     return (
         <div>
 
-            <Link to={singleCouse.id}><h3>{singleCouse.title}</h3></Link>
+            {/* <Link to={singleCouse.id}><h3>{singleCouse.title}</h3></Link> */}
             {/* {
                 name.map(coursName => <p key={name.id}>
                     <SingleCourse

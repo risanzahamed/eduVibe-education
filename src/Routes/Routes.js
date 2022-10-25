@@ -7,6 +7,7 @@ import SingUp from "../Pages/SingUp";
 import Roots from "./Roots";
 import Faq from "../Pages/Faq";
 import CoursesName from "../Pages/CoursesName";
+import CourseDetails from "../Pages/CourseDetails";
 
 export const router = createBrowserRouter([
     {
@@ -30,16 +31,29 @@ export const router = createBrowserRouter([
           path:'/faq',
           element: <Faq/>
         },
+
         {
           path:'/courses',
           element: <Courses/>,
-          loader: ()=> fetch(`https://education-api-server.vercel.app/courses`)
+          loader: () => fetch(`https://education-api-server.vercel.app/courses/`)
         },
         {
-          path:'/courses/:id',
-          element: <CoursesName/>,
-          loader: ({params})=> fetch(`https://education-api-server.vercel.app/courses/${params.name}`)
+          path:'/courses-details',
+          element: <CourseDetails/>,
+          loader: () => fetch(`https://education-api-server.vercel.app/courses/`)
         },
+
+        {
+          path:'/courses/:id',
+          element: <Courses/>,
+          loader: ({params}) => fetch(`https://education-api-server.vercel.app/courses/${params.id}`)
+        },
+        {
+          path:'/course/:id',
+          element: <CourseDetails/>,
+          loader: ({params}) => fetch(`https://education-api-server.vercel.app/courses/${params.id}`)
+        },
+        
         {
           path:'/login',
           element: <Login/>
