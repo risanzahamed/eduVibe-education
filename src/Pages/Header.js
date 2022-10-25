@@ -40,6 +40,9 @@ const Header = () => {
                 <Link to='/login' className=" btn btn-primary">Login</Link>
                 <Link to='/sign-up' className=" btn btn-info m-3">Sign Up</Link>
             </div>
+            <button  value={true}>On</button>
+            <button  value={false}>Of</button>
+            
         </div>
 
 

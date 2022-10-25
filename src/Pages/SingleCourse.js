@@ -7,7 +7,7 @@ const SingleCourse = ({ singleCouse }) => {
         <div>
             {/* <h2>{title}</h2> */}
             
-
+            
             <div>
                 <div class="max-w-xs mb-10 mt-3 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <div class="px-4 py-2">

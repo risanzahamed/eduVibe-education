@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleCourse from './SingleCourse';
 import './Courses.css'
+import CoursesName from './CoursesName';
 
 const Courses = () => {
   const data = useLoaderData()
@@ -12,25 +13,35 @@ const Courses = () => {
 
 
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20">
-      <div className="flex max-w-xl mb-36 lg:w-2/3 md:mx-auto lg:text-left mt-10 sm:text-center lg:max-w-5xl md:mb-12">
+    <div className=" py-16  sm:max-w-xl md:max-w-full  md:px-24  lg:py-20">
+      <div>
 
         <div>
-          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+          <p className="">
             Total Courses {data.length}
 
-            <div>
-              
-              <div className='grid gap-4 grid-cols-3 grid-rows-2'>
-                
+            <div className='flex m-0'>
+
+              <div className='w-4/12'>
                 {
-                data.map(singleCouse => <SingleCourse
-                  singleCouse={singleCouse}
-                  key={data.id}></SingleCourse>
-                )
-              }
-              
+                  data.map(courseName => <CoursesName
+                    courseName={courseName}
+                    key={data.id}>
+                  </CoursesName>
+                  )
+                }
               </div>
+              
+              <div className='grid 9/12 gap-4 grid-cols-3 grid-rows-2'>
+
+                {
+                  data.map(singleCouse => <SingleCourse
+                    singleCouse={singleCouse}
+                    key={data.id}></SingleCourse>
+                  )
+                }
+              </div>
+
             </div>
 
           </p>
