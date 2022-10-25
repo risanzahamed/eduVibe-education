@@ -82,13 +82,12 @@ const Home = () => {
                                     height="24"
                                 />
                             </svg>
-                            
+
                         </span>{' '}
                         A broad selection of courses
                     </h2>
                     <p className="text-base text-gray-700 md:text-lg">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque rem aperiam, eaque ipsa quae.
+                        Choose from 204,000 online video courses with new additions published every month
                     </p>
                 </div>
                 <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -99,7 +98,7 @@ const Home = () => {
                             </div>
                             <h6 className="mb-2 font-semibold leading-5">JavaScript</h6>
                             <p className="mb-3 text-sm text-gray-900">
-                            JavaScript is a text-based computer programming language used to make dynamic web pages. A must-learn for aspiring web developers or programmers, JavaScript can be used for features like image carousels, displaying countdowns and timers, and playing media on a webpage. With JavaScript online classes, you can learn to build.....
+                                JavaScript is a text-based computer programming language used to make dynamic web pages. A must-learn for aspiring web developers or programmers, JavaScript can be used for features like image carousels, displaying countdowns and timers, and playing media on a webpage. With JavaScript online classes, you can learn to build.....
                             </p>
                         </div>
 
@@ -111,7 +110,7 @@ const Home = () => {
                             </div>
                             <h6 className="mb-2 font-semibold leading-5">Data Science</h6>
                             <p className="mb-3 text-sm text-gray-900">
-                            Data science application is an in-demand skill in many industries worldwide — including finance, transportation, education, manufacturing, human resources, and banking. Explore data science courses with Python, statistics, machine learning, and more to grow your knowledge. Get data science training if you are into research, statistics.....
+                                Data science application is an in-demand skill in many industries worldwide — including finance, transportation, education, manufacturing, human resources, and banking. Explore data science courses with Python, statistics, machine learning, and more to grow your knowledge. Get data science training if you are into research, statistics.....
                             </p>
                         </div>
                     </div>
@@ -122,7 +121,7 @@ const Home = () => {
                             </div>
                             <h6 className="mb-2 font-semibold leading-5">Excel</h6>
                             <p className="mb-3 text-sm text-gray-900">
-                            Take a Microsoft Excel course from Udemy, and learn how to use this industry-standard software. Real-world experts will show you the basics like how to organize data into sheets, rows and columns, and advanced techniques like creating complex dynamic formulas. Both small businesses and large companies use Excel to.....
+                                Take a Microsoft Excel course from Udemy, and learn how to use this industry-standard software. Real-world experts will show you the basics like how to organize data into sheets, rows and columns, and advanced techniques like creating complex dynamic formulas. Both small businesses and large companies use Excel to.....
                             </p>
                         </div>
                     </div>
@@ -133,7 +132,7 @@ const Home = () => {
                             </div>
                             <h6 className="mb-2 font-semibold leading-5">Web Development</h6>
                             <p className="mb-3 text-sm text-gray-900">
-                            The world of web development is as wide as the internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed at creating, managing, and debugging the websites and applications that we increasingly rely on.
+                                The world of web development is as wide as the internet itself. Much of our social and vocational lives play out on the internet, which prompts new industries aimed at creating, managing, and debugging the websites and applications that we increasingly rely on.
                             </p>
                         </div>
 
@@ -160,7 +159,7 @@ const Home = () => {
                                 Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.
                             </p>
 
-                            <Link to= "/sign-up"><button className='btn btn-primary mt-4'>Sign Up Now</button></Link>
+                            <Link to="/sign-up"><button className='btn btn-primary mt-4'>Sign Up Now</button></Link>
                         </div>
 
 

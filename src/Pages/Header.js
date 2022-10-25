@@ -5,8 +5,8 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100 z-40">
             <div className="navbar-start z-40">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                <div className="dropdown ">
+                    <label tabIndex={0} className="btn text-black btn-ghost lg:hidden">
                         {/* <img src="https://eduvibe.react.devsvibe.com/images/logo/logo.png" alt="" srcset="" /> */}
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
