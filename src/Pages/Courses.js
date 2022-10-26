@@ -23,9 +23,9 @@ const Courses = () => {
           <p className="">
             Total Courses {courses.length}
 
-            <div className='flex m-0'>
+            <div className='flex wrap m-0'>
 
-              <div className='w-4/12'>
+              <div className='lg:w-4/12'>
 
 
                 {

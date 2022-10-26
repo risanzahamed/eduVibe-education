@@ -1,68 +1,60 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword, updateProfile, sendEmailVerification, signInWithPopup } from "firebase/auth";
-import app from '../firebase/firebase.config';
-import toast from 'react-hot-toast';
-import { GoogleAuthProvider } from "firebase/auth";
-import { AuthContext } from '../Contexts/UserContext';
+import { Link, useNavigate } from 'react-router-dom';
 
-const auth = getAuth(app)
+import { AuthContext } from '../Contexts/UserContext';
+import toast from 'react-hot-toast';
+
+
 
 
 const SingUp = () => {
 
-    const {createUser,updateName} = useContext(AuthContext)
+    const navigate = useNavigate()
+    
 
-
-    const googleProvider = new GoogleAuthProvider();
-
-
+    const {createUser,updateName, verifyEmail, signinwithgoogle, updatePhoto, user} = useContext(AuthContext)
+    console.log(user)
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // console.log(e.target.email.value);
+
         const name = e.target.name.value
         const email = e.target.email.value
         const password = e.target.password.value
-        
+        const url = e.target.url.value
 
-        // console.log(name, email, password);
-        // console.log(email);
+        createUser(email, password)
 
-        createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 console.log(result.user);
+                alert('create user succesfull')
+                navigate('/')
+                updateName(name)
+                updatePhoto(url)
                 
-
-
-                updateName(auth.currentUser, {
-                    displayName: name,
                 }).then(() => {
-                    toast.success("success")
+                    alert('Name Updated Successfully')
                 }).catch((error) => {
-                    alert("fail")
+                    console.log(error)
                 });
 
 
-                sendEmailVerification(auth.currentUser)
+                verifyEmail()
                     .then(() => {
-                        alert('check your mail')
+                        toast.warning('check your mail')
+                    }) 
+                    .catch((error) => {
+                        console.log(error)
                     });
-                    
-            })
-            .catch(error => console.log(error))
-
-    }
-    // google signin
-    const handleGoogle = ()=>{
-        signInWithPopup(auth, googleProvider)
-        .then(result =>{
-            console.log(result.user);
-        })
-    }
-
-
-
+                }
+                const handleGoogle = ()=>{
+                    signinwithgoogle()
+                    .then(result =>{
+                        console.log(result.user);
+                        alert('Google signUp success')
+                        navigate('/')
+                    })
+        }
 
     return (
         <div className="flex align-middle justify-center mt-32 mb-32 w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
@@ -120,6 +112,14 @@ const SingUp = () => {
                             type="email"
                             name='email' />
                     </div>
+                    <div className="mt-4">
+                        <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200" for="LoggingEmailAddress">Photo Url</label>
+                        <input
+                            id="url"
+                            className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                            type="url"
+                            name='url' />
+                    </div>
 
                     <div className="mt-4">
                         <div className="flex justify-between">
@@ -138,6 +138,7 @@ const SingUp = () => {
                             type="submit"
                             value="Sign Up"
                         />
+                        
                     </div>
                 </form>
                 {/* forum feild */}
