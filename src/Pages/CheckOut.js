@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const CheckOut = () => {
     return (
         <div className=' align-middle text-center justify-center p-40 m-40'>

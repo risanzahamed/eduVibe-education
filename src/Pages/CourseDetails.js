@@ -12,26 +12,25 @@ const CourseDetails = () => {
     const { title, price, longDescription, rating, image, author, authorImage } = data
 
     return (
-        <div className='flex '>
-            <div class=" ml-44 mr-44 my-20">
+        <div className='lg:flex '>
+            <div class=" lg:ml-44 lg:mr-44 my-20">
                 <img class="object-cover object-center w-full h-100" src={image} alt="avatar" />
 
                 <div className='bg-yellow-50'>
                     <div class="flex items-center px-6 py-3 bg-gray-900">
 
 
-                        <h1 class="mx-3  text-4xl font-semibold text-white">{title}</h1>
+                        <h1 class="mx-3  lg:text-4xl font-semibold text-white">{title}</h1>
                     </div>
 
                     <div class="px-6 py-4">
-
+                        <h1 className='text-4xl font-bold mb-12 mt-6'>Description:</h1>
                         <p class="py-2 text-1xl text-gray-700 dark:text-gray-400">{longDescription}</p>
 
-                        <div class="flex  text-2xl items-center mt-4 pb-20 text-gray-700 dark:text-gray-200">
+                        <div class="lg:flex  text-2xl items-center mt-4 pb-20 text-gray-700 dark:text-gray-200">
 
                             <h1 class="px-2 text-2xl"> Price : {price}</h1>
-                            <FaStar />
-                            <h1 class="px-2 text-2xl">{rating.rate}</h1>
+                            <FaStar /> <h1 class="px-2 text-2xl">{rating.rate}</h1>
                             <Link to="/checkOut"><button  className='btn btn-outline ml-12'>Get premium access</button></Link>
                             
                         </div>

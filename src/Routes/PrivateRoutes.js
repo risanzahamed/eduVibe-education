@@ -7,7 +7,7 @@ const PrivateRoutes = ({children}) => {
     const location = useLocation()
     
     if(loading){
-        return <div>wait a moment....</div>
+        return <div className='text-4xl align-middle justify-center text-center m-40 font-bold'>wait a moment....</div>
     }
 
     if(user && user.uid){

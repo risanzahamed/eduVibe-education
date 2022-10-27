@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification,  signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config';
 
@@ -18,7 +18,6 @@ const UserContext = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
       }
-    // step-2
 
     const updateName = (name)=>{
         return updateProfile(auth.currentUser, {displayName: name})
@@ -28,23 +27,17 @@ const UserContext = ({ children }) => {
         return updateProfile(auth.currentUser, {photoURL: url})
     }
 
-    // step-3
 
     const verifyEmail =()=>{
             return sendEmailVerification(auth.currentUser)
         }
 
-    // step-4
-
-    // Google Signin
 
     const signinwithgoogle = ()=>{
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
-    // step-5
-    // Login with password
 
     const signin = (email, password)=>{
         setLoading(true)
@@ -52,30 +45,25 @@ const UserContext = ({ children }) => {
         
     }
 
-    // step-6
-    // logout
+    const signinwithgithub =()=>{
+        
+    }
+
 
     const logOut = ()=>{
         return signOut(auth)
     }
 
-       // step-6
-    // Reset Password
-
-    const resetPassword = (email) =>{
-        setLoading(true)
-        return sendPasswordResetEmail(auth, email)
-    }
+    
 
     useEffect(() => {
-        //this part will execute once the component is mounted.
+       
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
           setUser(currentUser)
           setLoading(false)
         })
     
         return () => {
-          //this part will execute once the component is unmounted.
           unsubscribe()
         }
       }, [])
@@ -89,7 +77,6 @@ const authInfo ={
     signinwithgoogle,
     signin,
     updatePhoto,
-    resetPassword,
     logOut,
 }
 
