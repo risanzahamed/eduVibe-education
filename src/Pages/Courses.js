@@ -23,7 +23,7 @@ const Courses = () => {
           <p className="">
             Total Courses {courses.length}
 
-            <div className='flex wrap m-0'>
+            <div className='lg:flex wrap m-0'>
 
               <div className='lg:w-4/12'>
 
@@ -37,7 +37,7 @@ const Courses = () => {
 
               </div>
 
-              <div className='grid 9/12 gap-4 grid-cols-3 grid-rows-2'>
+              <div className='lg:grid 9/12 gap-4 grid-cols-3 grid-rows-2'>
 
                 {
                   data.map(singleCouse => 

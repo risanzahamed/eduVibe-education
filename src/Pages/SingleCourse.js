@@ -9,7 +9,7 @@ const SingleCourse = ({ singleCouse }) => {
             <div>
                 <Link to={`/course/${singleCouse.id}`}>
                 
-                <div className="max-w-xs mb-10 mt-3 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                <div className="lg:max-w-xs m-0  mb-10 mt-3 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <div className="px-4 py-2">
                         <h1 className="text-xl font-bold text-gray-800 capitalize dark:text-white">{title}</h1>
                         <p className="mt-5  text-1xl  text-gray-600 dark:text-gray-400">{description}</p>
