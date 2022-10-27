@@ -54,7 +54,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
 
-        {user?.email ? (
+        {user?.uid ? (
           <>
             <img className='rounded-lg w-10 h-10 mr-5' src={user ? user.photoURL : "not available"} alt="" srcset="" title={user.displayName} />
             {/* <Link to='/checkout' className='mr-5 hover:text-gray-900'>

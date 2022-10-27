@@ -8,7 +8,7 @@ export const AuthContext = createContext()
 
 const UserContext = ({ children }) => {
     const googleProvider = new GoogleAuthProvider()
-    const Githubprovider = new GithubAuthProvider();
+    const githubprovider = new GithubAuthProvider();
     const [loading, setLoading] = useState(true)
 
 
@@ -46,7 +46,8 @@ const UserContext = ({ children }) => {
     }
 
     const signinwithgithub =()=>{
-        
+        setLoading(true)
+        return signInWithPopup(auth, githubprovider)
     }
 
 
@@ -78,6 +79,7 @@ const authInfo ={
     signin,
     updatePhoto,
     logOut,
+    signinwithgithub,
 }
 
 

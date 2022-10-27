@@ -1,19 +1,13 @@
-import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UserContext';
-import app from '../firebase/firebase.config';
 import toast, { Toaster } from 'react-hot-toast';
-
-const auth = getAuth(app)
 
 const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
-
-    const { signinwithgoogle, signin, resetPassword } = useContext(AuthContext)
-    const Githubprovider = new GithubAuthProvider();
+    const { signinwithgoogle,signinwithgithub, signin } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -42,7 +36,7 @@ const Login = () => {
     }
 
     const handleGithub = () => {
-        signInWithPopup(auth, Githubprovider)
+        signinwithgithub()
             .then((result) => {
                 console.log(result.user);
 
@@ -50,7 +44,6 @@ const Login = () => {
                 console.log(error);
             });
     }
-
 
     return (
         <div className="flex align-middle justify-center mt-32 mb-32 w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
@@ -64,11 +57,6 @@ const Login = () => {
                 </p>
 
                 {/* forum feild */}
-
-
-
-
-
                 <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
 
                     <form onSubmit={handleSubmit}>
@@ -104,8 +92,6 @@ const Login = () => {
                         </div>
 
                     </form>
-
-
                     <div className="flex items-center mt-6 -mx-2">
                         <button onClick={handleGoogle} type="button" className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-medium text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:bg-blue-400 focus:outline-none">
                             <svg className="w-4 h-4 mx-2 fill-current" viewBox="0 0 24 24">
@@ -126,7 +112,6 @@ const Login = () => {
 
                     <p className="mt-8 text-xs font-light text-center text-gray-400"> Don't have an account? <Link to="/sign-up" className="font-medium text-gray-700 dark:text-gray-200 hover:underline">Create One</Link></p>
                 </div>
-
                 {/* forum feild */}
             </div>
         </div>
