@@ -30,7 +30,7 @@ const Login = () => {
         signinwithgoogle()
             .then(result => {
                 console.log(result.user);
-                navigate('/')
+                navigate(from, { replace: true })
                 toast.success('login successfull using Google')
             })
     }
@@ -38,6 +38,7 @@ const Login = () => {
     const handleGithub = () => {
         signinwithgithub()
             .then((result) => {
+                navigate(from, { replace: true })
                 console.log(result.user);
 
             }).catch((error) => {
